@@ -1,0 +1,32 @@
+# Big Data WiSe 2026/27 – Vertiefungsthema Kubernetes
+# Übung 2, Bonus: Dieses Manifest ist absichtlich kaputt. Zwei Fehler stecken darin.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: analytics
+  template:
+    metadata:
+      labels:
+        app: analytics
+    spec:
+      containers:
+        - name: analytics
+          image: busybox:1.36-alpin
+          env:
+            - name: DB_HOSTT
+              value: "postgres.intern"
+          command:
+            - sh
+            - -c
+            - |
+              if [ -z "$DB_HOST" ]; then
+                echo "FEHLER: Umgebungsvariable DB_HOST ist nicht gesetzt"
+                exit 1
+              fi
+              echo "Analytics laeuft, Datenbank: $DB_HOST"
+              sleep 3600

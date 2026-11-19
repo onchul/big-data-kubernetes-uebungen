@@ -1,0 +1,45 @@
+{
+  "title": "Übung 1: Erstellung eines Deployments",
+  "description": "Einen Pod starten, die Entscheidung des Schedulers finden und ein Deployment aus einem Manifest anlegen.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Knoten des Clusters auflisten",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Einen Pod starten",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Die Entscheidung des Schedulers finden",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Den Pod löschen",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Ein Deployment aus einem Manifest",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [{ "file": "web-deployment.yaml", "target": "/root/" }]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

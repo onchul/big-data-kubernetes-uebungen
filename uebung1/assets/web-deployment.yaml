@@ -1,0 +1,23 @@
+# Big Data WiSe 2026/27 – Vertiefungsthema Kubernetes
+# Übung 1: Soll-Zustand statt Befehl.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: web
+spec:
+  replicas: 3            # So viele Pods sollen laufen
+  selector:
+    matchLabels:
+      app: web           # Diese Pods gehören zum Deployment
+  template:              # Bauplan für jeden einzelnen Pod
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.25-alpine
+          ports:
+            - containerPort: 80

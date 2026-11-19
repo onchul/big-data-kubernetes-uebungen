@@ -1,0 +1,48 @@
+{
+  "title": "Übung 2: Betrieb einer Anwendung",
+  "description": "Selbstheilung, Skalierung, Aktualisierung ohne Unterbrechung, Rollback und Fehlersuche.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Ausgangszustand herstellen",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Einen Pod löschen",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Auf fünf Replikate skalieren",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Neue Version ausrollen",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Auf die Vorversion zurückrollen",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        { "file": "shop.yaml", "target": "/root/" },
+        { "file": "analytics.yaml", "target": "/root/" }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
